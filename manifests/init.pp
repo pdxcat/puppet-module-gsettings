@@ -14,7 +14,7 @@ define gsettings(
     owner   => "root",
     group   => "root",
     mode    => "0644",
-    content => "[${schema}]\n  ${key}=${value}\n",
+    content => template('gsettings/setting.erb'),
     notify  => Exec["glib-compile-schemas"],
   }
 }

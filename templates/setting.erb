@@ -1,0 +1,9 @@
+[<%= @schema %>]
+  <%= @key %>=<%= case @value.class.name
+  when "String"
+    "'#{@value}'"
+  else
+    "#{@value}"
+  end
+%>
+
