@@ -2,6 +2,8 @@
   <%= @key %>=<%= case @value.class.name
   when "String"
     "'#{@value}'"
+  when "Array"
+    "[#{@value.map{|k| "'#{k}'"}.join(',')}]"
   else
     "#{@value}"
   end
